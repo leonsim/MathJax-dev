@@ -41,7 +41,7 @@ open(MJX,"<",$template);
 close(MJX);
 $lines = join("",@lines);
 
-$dstname = $dst; $dstname =~ s!.*/(dpvc-)?MathJax!/MathJax!;
+$dstname = $dst; $dstname =~ s!.*/(dpvc-)?MathJax!/MathJax!; $dstname =~ s/.*\/mathjax\/\/?/\/MathJax\//g;
 $lines =~ s/%%%NAME%%%/$dstname/;
 $lines =~ s/%%%DATA%%%/$compressed/;
 
